@@ -1,0 +1,31 @@
+doctype
+html
+    head
+        meta(charset='utf-8')
+        style
+        script(src='a.js')
+    body
+        div(style={width:'200px',height:'200px',background:'red'})
+        ul
+            li 这是我加的内容
+                input(type='text',value='aaa')
+            li
+                input(type='text',value='bbb')
+            li
+                input(type='text',value='ccc')
+        div(class=['111','222','333'])
+        div.aaa.bbb
+        div#div1
+        div&attributes({title:'aaa',class:'bbb'})
+        div
+            |abc
+            |12355
+        script.
+            window.onload = function () {
+                let button = document.getElementById('button')
+                button.onclick = function (ev) {
+                    alert('1')
+                }
+            }
+        p 我的名字是：#{name}
+        div(style=json)

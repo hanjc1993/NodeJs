@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      .container div{
+          height: 50px;width: 50px;
+          background: #ccc;
+          float: left;
+          margin: 2px;
+          text-align: center;
+          line-height: 50px;
+      }
+      .last{
+          clear: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="11 22"></div>
+    <div id="1">我的年龄是:11<br><span>1</span></div>
+    <!--生成一个ul并在里面循环生成li-->
+    <ul>
+      <!--for所在的层级代表li所在的层级，循环的内容前必须再加一个缩进-->
+      <li>113</li>
+      <li>123</li>
+      <li>4152</li>
+      <li>123421</li>
+    </ul>
+    <div>&lt;h2&gt;我是标题&lt;/h2&gt;&lt;p&gt;我是内容内容内容&lt;/p&gt;</div>
+    <div><h2>我是标题</h2><p>我是内容内容内容</p></div>
+    <div>
+      <!--即使是加个减号-，也必须加缩进，否则认为关闭上一个标签，比如这里-var这行有可能关闭上面的div标签-->
+      <!--if判断很简单，如下--><span style="background:red">我是偶数</span>
+    </div>
+    <!--switch判断则与js不同，-->
+    <div><span>等于13</span>
+    </div>
+    <div class="container">
+      <div class="last">0</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div class="last">4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div class="last">8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>11</div>
+    </div>
+  </body>
+</html>

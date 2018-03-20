@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <script src="jquery-3.2.1.js" type="text/javascript"></script>
+    <script>
+        function func(act) {
+            $.get('/user?',{
+                act:act,
+                user:$('#user').val(),
+                pass:$('#pass').val()
+            },function (data,status) {
+                if(status == 'error'){
+                    alert('请求失败')
+                }else{
+                    console.log(data);
+                    let json = eval('('+data+')');//因为后台返回的一定是字符串
+                    if (json.ok){
+                        if(act == 'login'){
+                            alert('登录成功')
+                        }else{alert('注册成功')}
+                    }else {alert('失败： '+ json.msg)}
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    用户：<input type="text" id="user"><br>
+    密码：<input type="password" id="pass"><br>
+    <input type="submit" value="登录" onclick="func('login')">
+    <input type="submit" value="注册" onclick="func('reg')">
+</body>
+</html>

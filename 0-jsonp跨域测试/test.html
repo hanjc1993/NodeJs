@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="传输" onclick="send('http://localhost:2234/test?user=hjc')">
+<script>
+    function send(src){
+        let script = document.createElement('script')
+        script.setAttribute('type','text/javascript')
+        script.src = src;
+        document.body.appendChild(script)
+    }
+    function gettest(x) {
+        console.log(x)
+    }
+</script>
+</body>
+</html>

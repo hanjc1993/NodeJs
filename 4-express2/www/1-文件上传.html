@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>upLoad</title>
+</head>
+<body>
+<!--这里form不是自带传文件功能的，必须设置enctype属性，这里设置为mul。。。-->
+<form action="http://localhost:2234/" method="post" enctype="multipart/form-data">
+    选择文件：<input type="file" name="file"><br>
+    <input type="submit" value="上传文件">
+</form>
+</body>
+</html>

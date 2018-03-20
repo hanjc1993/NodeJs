@@ -1,0 +1,56 @@
+doctype
+html
+    head
+        meta(charset='utf-8')
+        style.
+            .container div{
+                height: 50px;width: 50px;
+                background: #ccc;
+                float: left;
+                margin: 2px;
+                text-align: center;
+                line-height: 50px;
+            }
+            .last{
+                clear: left;
+            }
+    body
+        div(class='11',class='22')
+        -var x = 1;
+        -var y = 10;
+        div(id=x) 我的年龄是:#{x+y}
+            br
+            span=x
+        //生成一个ul并在里面循环生成li
+        ul
+            //for所在的层级代表li所在的层级，循环的内容前必须再加一个缩进
+            -for(var i=0 ; i<arr.length ; i++)
+                li=arr[i]
+        div=content
+        div!=content
+        div
+            //即使是加个减号-，也必须加缩进，否则认为关闭上一个标签，比如这里-var这行有可能关闭上面的div标签
+            -var xy = 20;
+            //if判断很简单，如下
+            -if(xy%2 == 0)
+                span(style={background:'red'}) 我是偶数
+            -else
+                span(style={background:'blue'}) 我是奇数
+        //switch判断则与js不同，
+        -var xyz = 13;
+        div
+            case xyz
+                when 13
+                    span 等于13
+                when 12
+                    span 等于12
+                default
+                    span 不等于12或13
+
+        div.container
+            -var z = 0;
+            while z<12
+                if(z%4 == 0)
+                    div.last=z++
+                else
+                    div=z++
