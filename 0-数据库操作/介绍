@@ -1,0 +1,76 @@
+关系型数据库
+mySQL.Oracle.SQLserver.Access.db2.fox pro等
+
+mySQL:
+免费商用，适合中小网站
+优点：性能不错
+缺点：集群、容灾稍弱
+
+Oracle
+商用收费，使用大型应用，密级数据
+优点：性能好，集群、容灾强
+缺点：贵
+
+文件型数据库
+sqlite MongoDB
+
+空间型
+不常用
+
+------------------------------------------------------------------
+
+server端：存放数据
+Client端：存放管理工具、NodeJS
+
+数据基本概念
+两种单位
+库：类似于文件夹，用来管理表，本身没法存东西
+表：类似于文件，用来存东西，有点像excel，分行列
+       行：一条数据
+       字段（域）：类似于列
+主键：唯一标志符，类似于id，比字段查找性能高的多，
+
+------------------------------------------------------------------
+
+安装server
+    安装mySQL和管理工具navicat，具体看教程https://www.bilibili.com/video/av12300358/index_17.html#page=17
+
+------------------------------------------------------------------
+所有数据库的唯一 且 通用操作语言是SQL，关键字大写，库表字段前面都要加特殊引号``，字符串要加单引号''，数字不加引号，分号结束本句
+    四大基本操作：增删改查
+        增：insert
+            INSERT INTO 表名（字段列表，值列表）
+                比如INSERT INTO `user_table` (`ID`,`username`,`password`) VALUES(0,'hjc2','654456');
+        删：deleta 删哪个表，中的哪一条，where相当于一个选择器
+            DELETE FROM 表名 WHERE 条件
+        改：update
+            UPDATE 表名 字段=值，字段=值，。。。 WHERE 条件
+        查：select
+            SELECT xxx FROM `user_table` WHERE 条件
+
+    详解：
+    连句时子句是有顺序的，必须where > group > order > limit
+        where  选择
+            where name='hjc'
+            where age < 18
+            where age>18 AND score<60
+            where age>18 OR sex = 'male'
+        order  排序
+            order BY age ASC或者DESC，表示升序或降序
+            order BY price ASC,sales DESC   表示先按价格升序排列，相同的值按销量降序排列
+        count  计数
+            SELECT count(*) FROM 表名
+        group  聚类-合并相同
+            SELECT * FROM 学生信息 group BY class 表示有几条数据说明有几个班级。。没啥意义
+            SELECT class,COUNT(class) FROM 学生信息 group BY class 表示学生信息表中，每个班级有几个人，输出两个字段
+            SELECT class,AVG(score) FROM 学生信息 group BY class 表示学生信息表中，每个班级的平均分
+            SELECT class,MAX(score),MIN(scroe) FROM 学生信息 group BY class 表示学生信息表中，每个班级的最高最低分
+            SELECT name,SUM(price) FROM 购物记录 group BY name ORDER BY SUM(price) DESC 表示在购物记录表中显示每个人的购物总金额，并按照降序排列
+        limit 限制输出，常用来分页（尤其数据量大时，必须每次只传一点）
+            limit 10  要0-10个
+            limit  5,8   从第五个开始（包含），要8个
+
+
+
+
+

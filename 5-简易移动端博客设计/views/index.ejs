@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes change {
+            0%{
+                margin-left:0;
+            }
+            30%{
+                margin-left:0;
+            }
+            33%{
+                margin-left:-600px;
+            }
+            63%{
+                margin-left:-600px;
+            }
+            66%{
+                margin-left:-1200px;
+            }
+            97%{
+                margin-left:-1200px;
+            }
+            100%{
+                margin-left:-1800px;
+            }
+        }
+        .banner{
+            width: 600px;
+            overflow: hidden;
+        }
+        .banner .animate{
+            animation: change 10s linear infinite;
+            width: 1800px;
+        }
+        .banner .content{
+            float: left;
+            position: relative;
+            list-style: none;
+            height: 400px;
+        }
+        .banner .text-box{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            background-color: rgba(200,200,200,0.5);
+        }
+        .banner .text-box *{
+            padding-left: 20px;
+        }
+        .body .article{
+            width: 600px;
+            background-color: #eee;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>我是测试页面</h1>
+    <div class="banner">
+        <div class="animate">
+            <% for(let i=0 ; i<banners.length ; i++){ %>
+            <div class="content">
+                <img src="<%= banners[i].src%>" width="600" height="400">
+                <div class="text-box">
+                    <h2><%= banners[i].title%></h2>
+                    <p><%= banners[i].sub_title%></p>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <div class="body">
+        <% for(let i=0 ; i<articles.length ; i++){ %>
+        <div class="article">
+            <h3><%=articles[i].title%></h3>
+            <p><%=articles[i].summary%></p>
+        </div>
+        <% } %>
+    </div>
+</body>
+<script>
+
+</script>
+</html>

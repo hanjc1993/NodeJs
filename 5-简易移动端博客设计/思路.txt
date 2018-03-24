@@ -1,0 +1,24 @@
+数据库结构
+    1.顶部图片轮播的图片，这里叫它banner
+    2.文章相关的数据
+    3.用户相关数据
+
+新建数据库时候，先确定数据字典，名字，作用，类型，长度，后面还可以改
+    轮播banner_table：
+        id int(3)
+        title 标题  varchar(32)
+        sub_title 副标题 varchar(32)
+        src 图片路径 varchar(64)
+    文章article_table：
+        id int(3)
+        author 作者  varchar(16)
+        author_src 作者头像 varchar(64)
+        title 标题 varchar(32)
+        post_time 发布时间(s) int 前台传过来的时间戳是int格式
+        content 内容 text text可以存很多很多的字，varchar一般不存长的数据
+        like 赞的数量 int
+    用户user_table：
+        id int(3)
+        username 用户名 varchar(32)
+        password 密码 varchar(32)
+        src 头像地址 varchar(64)

@@ -10,7 +10,7 @@ var loginData={
     'lisi':'1234',
     'wanger':'lisi'
 }
-
+//只要是自定义处理，都用.get或者.post，如果是使用中间件（后面讲），则用.use
 server.get('/login',function(req,res){
     console.log(req.query)
     let user = req.query.user;
